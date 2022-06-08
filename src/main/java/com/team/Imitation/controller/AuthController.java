@@ -1,4 +1,4 @@
-package com.team.Imitation.controller.auth;
+package com.team.Imitation.controller;
 
 import java.util.Map;
 
@@ -29,7 +29,7 @@ public class AuthController {
 		String password = requstLoginInfo.get("password");
 
 		httpServletResponse.addCookie(new Cookie(email, password));
-		httpServletResponse.encodeRedirectUrl(httpServletRequest.getLocalAddr() + "/");
+		httpServletResponse.encodeRedirectURL(httpServletRequest.getLocalAddr() + "/");
 
 	}
 }
