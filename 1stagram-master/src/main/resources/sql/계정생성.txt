@@ -1,9 +1,0 @@
-1. 관리자 권한으로 cmd 실행
-
-2. sqlplus sys as sysdba 입력 후 패스워드 입력하지 않고 엔터
-
-3. create user instagram identified by 1234; 실행
-
-4. grant dba to instagram;
-
-5. commit
