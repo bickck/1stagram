@@ -6,13 +6,13 @@
 
 <mapper namespace="com.team.Imitation.repository.LoginMapper">
 
-	<resultMap type="Member" id="memberMap">
+<!-- 	<resultMap type="Member" id="memberMap">
 		<result column="id" property="id" jdbcType="VARCHAR2" javaType="String"/>
 		<result column="id" property="id" jdbcType="VARCHAR2" javaType="String"/>
 		<result column="id" property="id" jdbcType="VARCHAR2" javaType="String"/>
 		<result column="id" property="id" jdbcType="VARCHAR2" javaType="String"/>
 		<result column="id" property="id" jdbcType="VARCHAR2" javaType="String"/>
-	</resultMap>
+	</resultMap> -->
 
 	<select id="login" resultMap="loginMap">
 		SELECT email,password FROM member
