@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.team.Imitation.repository.dto.LoginDTO;
 import com.team.Imitation.service.AuthService;
 
 @Controller
@@ -31,5 +32,13 @@ public class AuthController {
 		httpServletResponse.addCookie(new Cookie(email, password));
 		httpServletResponse.encodeRedirectURL(httpServletRequest.getLocalAddr() + "/");
 
+	}
+
+	@RequestMapping(value = "/loginTest", method = RequestMethod.POST)
+	public void loginTest() {
+		LoginDTO dto = dto = new LoginDTO();
+		dto.setEmail("emailTest");
+		dto.setPassword("passwordTest");
+		System.out.println(authService.login(dto));
 	}
 }

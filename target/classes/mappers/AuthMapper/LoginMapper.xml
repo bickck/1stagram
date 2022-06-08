@@ -2,23 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- FileMapper.xml -->
-
 <mapper namespace="com.team.Imitation.repository.LoginMapper">
 
-<!-- 	<resultMap type="Member" id="memberMap">
-		<result column="id" property="id" jdbcType="VARCHAR2" javaType="String"/>
-		<result column="id" property="id" jdbcType="VARCHAR2" javaType="String"/>
-		<result column="id" property="id" jdbcType="VARCHAR2" javaType="String"/>
-		<result column="id" property="id" jdbcType="VARCHAR2" javaType="String"/>
-		<result column="id" property="id" jdbcType="VARCHAR2" javaType="String"/>
-	</resultMap> -->
-
+	<resultMap type="com.team.Imitation.repository.dto.MemberDTO" id="loginMap">
+		<result column="id" property="id" jdbcType="INTEGER" javaType="int" />
+		<result column="email" property="email" jdbcType="VARCHAR"
+			javaType="String" />
+		<result column="password" property="password"
+			jdbcType="VARCHAR" javaType="String" />
+		<result column="birth" property="birth" jdbcType="VARCHAR"
+			javaType="String" />
+		<result column="address" property="address" jdbcType="VARCHAR"
+			javaType="String" />
+		<result column="create_at" property="create_at" jdbcType="TIMESTAMP"
+			javaType="java.sql.Timestamp" />
+	</resultMap>
 	<select id="login" resultMap="loginMap">
-		SELECT email,password FROM member
-		WHERE email=#{email} and password=#{password}
+		SELECT * FROM member where
+		email=#{email} and password=#{password}
 	</select>
 
+
+	<select id="time" resultType="string">
+		SELECT sysdate, systimestamp FROM
+		dual
+	</select>
 </mapper>
 
 

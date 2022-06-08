@@ -5,17 +5,16 @@ import org.springframework.stereotype.Service;
 
 import com.team.Imitation.repository.LoginMapper;
 import com.team.Imitation.repository.dto.LoginDTO;
+import com.team.Imitation.repository.dto.MemberDTO;
 
 @Service
 public class AuthService {
-	
+
 	@Autowired
 	private LoginMapper loginMapper;
 
-	public boolean isEmailAndPassword(LoginDTO dto) {
-		
-		loginMapper.login(dto);
-		
-		return false;
+	public MemberDTO login(LoginDTO dto) {
+
+		return null;
 	}
 }
