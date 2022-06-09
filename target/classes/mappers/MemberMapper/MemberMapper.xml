@@ -6,7 +6,7 @@
 
 <mapper namespace="com.team.Imitation.repository.MemberMapper">
 
-	<resultMap type="Member" id="memberMap">
+	<resultMap type="com.team.Imitation.repository.dto.MemberDTO" id="memberMap">
 		<result column="id" property="id" jdbcType="INTEGER" javaType="int" />
 		<result column="username" property="username" jdbcType="VARCHAR" javaType="String"/>
 		<result column="email" property="email" jdbcType="VARCHAR" javaType="String"/>

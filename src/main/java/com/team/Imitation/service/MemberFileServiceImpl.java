@@ -6,8 +6,10 @@ import java.util.Calendar;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+@Service
 public class MemberFileServiceImpl implements MemberFileService{
 
 	@Override

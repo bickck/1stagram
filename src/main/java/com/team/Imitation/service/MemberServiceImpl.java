@@ -11,14 +11,14 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.team.Imitation.repository.MemberMapper;
 import com.team.Imitation.repository.dto.MemberDTO;
 
-
+@Service
 public class MemberServiceImpl implements MemberService {
 
 	@Autowired
-	MemberMapper mapper;
+	private MemberMapper mapper;
 	
 	@Autowired
-	MemberFileService mfs;
+	private MemberFileService mfs;
 
 	@Override
 	public int register(MemberDTO member) {
@@ -60,10 +60,10 @@ public class MemberServiceImpl implements MemberService {
 		
 		String msg, url;
 		if(result == 1) {
-			msg = "내용이 변경 되었습니다";
+			msg = "�궡�슜�씠 蹂�寃� �릺�뿀�뒿�땲�떎";
 			url = "";
 		} else {
-			msg = "수정 오류입니다";
+			msg = "�닔�젙 �삤瑜섏엯�땲�떎";
 			url = "";
 		}
 		return mfs.getMessage(request, msg, url);
@@ -74,11 +74,11 @@ public class MemberServiceImpl implements MemberService {
 		int result = mapper.delete(email);
 		String msg, url;
 		if(result == 1) {
-			msg="삭제 되었습니다";
+			msg="�궘�젣 �릺�뿀�뒿�땲�떎";
 			url="";
 			mfs.deleteImage(imgName);
 		} else {
-			msg = "삭제 오류";
+			msg = "�궘�젣 �삤瑜�";
 			url = "";
 		}
 		return mfs.getMessage(request, msg, url);
