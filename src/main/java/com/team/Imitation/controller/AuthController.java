@@ -22,6 +22,7 @@ import com.team.Imitation.repository.dto.MemberDTO;
 import com.team.Imitation.service.AuthService;
 
 @Controller
+@RequestMapping(value="/auth")
 public class AuthController {
 
 	private static final String LOGINSESSION = "LOGINSESSION";
@@ -39,6 +40,8 @@ public class AuthController {
 			responseModel.put(LOGINSESSION, sessionKey);
 			responseModel.put("MEMBER", memberDTO);
 			httpSession.setAttribute(LOGINSESSION, responseModel);
+		} else {
+			// 에러 메세지 출력
 		}
 		return new ModelAndView("/index", responseModel);
 	}
