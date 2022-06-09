@@ -7,17 +7,39 @@
 <mapper namespace="com.team.Imitation.repository.MemberMapper">
 
 	<resultMap type="Member" id="memberMap">
-		<result column="username" property="username" jdbcType="VARCHAR2" javaType="String"/>
-		<result column="email" property="email" jdbcType="VARCHAR2" javaType="String"/>
-		<result column="password" property="password" jdbcType="VARCHAR2" javaType="String"/>
-		<result column="birth" property="birth" jdbcType="VARCHAR2" javaType="String"/>
-		<result column="address" property="address" jdbcType="VARCHAR2" javaType="String"/>
+		<result column="id" property="id" jdbcType="INTEGER" javaType="int" />
+		<result column="username" property="username" jdbcType="VARCHAR" javaType="String"/>
+		<result column="email" property="email" jdbcType="VARCHAR" javaType="String"/>
+		<result column="password" property="password" jdbcType="VARCHAR" javaType="String"/>
+		<result column="birth" property="birth" jdbcType="VARCHAR" javaType="String"/>
+		<result column="address" property="address" jdbcType="VARCHAR" javaType="String"/>
+		<result column="create_at" property="create_at" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp" />
 	</resultMap>
 
 	<insert id="register">
-		insert into users values(#{username}, #{email}, #{password},#{birth},#{address}, sysdate)
+		insert into users values(#{id},#{username}, #{email}, #{password},#{birth},#{address}, #{create_at})
 	</insert>
-
+	
+	<select id="getMember" resultMap="memberMap">
+		select * from users where email=#{email}
+	</select>
+	
+	<select id="contentView" resultMap="memberMap">
+		select * from users where id=#{id}
+	</select>
+	
+	<update id="modify">
+		update users set email=#{email},
+		password=#{password},
+		imgName=#{imgName}
+		where id=#{id }
+	</update>
+	
+	<delete id="delete">
+		delete from users where email=#{email}
+	</delete>
+	
+	
 </mapper>
 
 

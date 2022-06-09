@@ -6,4 +6,12 @@ public interface MemberMapper {
 
 	public int register(MemberDTO member);
 
+	public MemberDTO getMember(String email);
+
+	public MemberDTO contentView(int id);
+
+	public int modify(MemberDTO dto);
+	
+	public int delete(String email);
+
 }
