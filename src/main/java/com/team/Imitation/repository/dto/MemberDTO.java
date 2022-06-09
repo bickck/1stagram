@@ -11,13 +11,14 @@ public class MemberDTO {
 	private String password;
 	private String birth;
 	private String address;
+	private String imgName;
 	private Timestamp create_at;
 
 	public MemberDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MemberDTO(Integer id, String username, String email, String password, String birth, String address,
+	public MemberDTO(Integer id, String username, String email, String password, String birth, String address, String imgName,
 			Timestamp create_at) {
 		this.id = id;
 		this.username = username;
@@ -25,13 +26,23 @@ public class MemberDTO {
 		this.password = password;
 		this.birth = birth;
 		this.address = address;
+		this.imgName = imgName;
 		this.create_at = create_at;
 	}
+	
+	
 
 	@Override
 	public String toString() {
 		return "MemberDTO [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password
-				+ ", birth=" + birth + ", address=" + address + ", create_at=" + create_at + "]";
+				+ ", birth=" + birth + ", address=" + address + ",imagName=" + imgName + ", create_at=" + create_at + "]";
+	}
+	public String getImgName() {
+		return imgName;
+	}
+	
+	public void setImgName(String imgName) {
+		this.imgName = imgName;
 	}
 
 	public Integer getId() {
