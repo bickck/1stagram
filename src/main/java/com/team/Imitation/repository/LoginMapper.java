@@ -10,6 +10,4 @@ public interface LoginMapper {
 
 	public MemberDTO login(LoginDTO loginDTO);
 
-	public String time();
-
 }

@@ -20,8 +20,7 @@
 		<constructor-arg ref="hikariConfig" />
 	</bean>
 	<!-- 데이터 소스 마이바티스에 등록 및 xml 위치 설정 -->
-	<bean id="sqlSessionFactory"
-		class="org.mybatis.spring.SqlSessionFactoryBean">
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="ds" />
 		<property name="mapperLocations" value="classpath:/mappers/**/*Mapper.xml" />
 		<property name="configLocation" value="classpath:/mybatis-config.xml"/>

@@ -37,8 +37,4 @@ public class LoginMapperTest {
 		System.out.println(member.toString());
 	}
 
-	@Test
-	public void testfindMapper() {
-		System.out.println(loginMapper.time());
-	}
 }

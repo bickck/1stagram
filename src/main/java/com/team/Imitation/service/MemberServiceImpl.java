@@ -1,16 +1,17 @@
 package com.team.Imitation.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.team.Imitation.repository.MemberMapper;
 import com.team.Imitation.repository.dto.MemberDTO;
 
-public class MemberServiceImpl implements MemberService{
-	
+
+public class MemberServiceImpl implements MemberService {
+
 	@Autowired
 	MemberMapper mapper;
-	
-	
+
 	@Override
 	public int register(MemberDTO member) {
 		try {
@@ -20,7 +21,5 @@ public class MemberServiceImpl implements MemberService{
 			return 0;
 		}
 	}
-	
-	
-	
+
 }

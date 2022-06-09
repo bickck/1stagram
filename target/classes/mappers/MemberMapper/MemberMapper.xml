@@ -7,11 +7,11 @@
 <mapper namespace="com.team.Imitation.repository.MemberMapper">
 
 	<resultMap type="Member" id="memberMap">
-		<result column="username" property="username" jdbcType="VARCHAR2" javaType="String"/>
-		<result column="email" property="email" jdbcType="VARCHAR2" javaType="String"/>
-		<result column="password" property="password" jdbcType="VARCHAR2" javaType="String"/>
-		<result column="birth" property="birth" jdbcType="VARCHAR2" javaType="String"/>
-		<result column="address" property="address" jdbcType="VARCHAR2" javaType="String"/>
+		<result column="username" property="username" jdbcType="VARCHAR" javaType="String"/>
+		<result column="email" property="email" jdbcType="VARCHAR" javaType="String"/>
+		<result column="password" property="password" jdbcType="VARCHAR" javaType="String"/>
+		<result column="birth" property="birth" jdbcType="VARCHAR" javaType="String"/>
+		<result column="address" property="address" jdbcType="VARCHAR" javaType="String"/>
 	</resultMap>
 
 	<insert id="register">
