@@ -17,26 +17,30 @@
 	</resultMap>
 
 	<insert id="register">
-		insert into users values(#{id},#{username}, #{email}, #{password},#{birth},#{address}, #{create_at})
+		insert into member values(#{id},#{username}, #{email}, #{password},#{birth},#{address}, SYSDATE)
 	</insert>
 	
 	<select id="getMember" resultMap="memberMap">
-		select * from users where email=#{email}
+		select * from member where email=#{email}
 	</select>
 	
 	<select id="contentView" resultMap="memberMap">
-		select * from users where id=#{id}
+		select * from member where id=#{id}
 	</select>
 	
+	<update id="profileImage">
+	</update>
+	
 	<update id="modify">
-		update users set email=#{email},
-		password=#{password},
-		imgName=#{imgName}
+		update member set password=#{password},
+		imgName=#{imgName},
+		birth=#{birth},
+		address=#{address},
 		where id=#{id }
 	</update>
 	
 	<delete id="delete">
-		delete from users where email=#{email}
+		delete from member where email=#{email}
 	</delete>
 	
 	

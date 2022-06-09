@@ -56,7 +56,7 @@ public class MemberServiceImpl implements MemberService {
 			dto.setImgName(mul.getParameter("originFileName"));
 		}
 
-		int result = mapper.modify(dto);
+		int result = mapper.modifyMemberInfo(dto);
 		
 		String msg, url;
 		if(result == 1) {

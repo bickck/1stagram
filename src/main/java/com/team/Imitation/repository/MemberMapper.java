@@ -10,8 +10,10 @@ public interface MemberMapper {
 
 	public MemberDTO contentView(int id);
 
-	public int modify(MemberDTO dto);
+	public int modifyMemberInfo(MemberDTO dto);
 	
 	public int delete(String email);
+	
+	public void profileImage(String email, String originalFileName);
 
 }

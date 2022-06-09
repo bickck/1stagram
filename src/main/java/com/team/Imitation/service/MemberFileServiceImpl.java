@@ -41,7 +41,9 @@ public class MemberFileServiceImpl implements MemberFileService{
 	@Override
 	public void deleteImage(String originFileName) {
 		File file = new File(IMAGE_REPO + "/" + originFileName);
-		file.delete();
+		if(!file.delete()) {
+			
+		}
 	}
 	
 	

@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -22,9 +24,11 @@ import com.team.Imitation.repository.dto.MemberDTO;
 import com.team.Imitation.service.AuthService;
 
 @Controller
-@RequestMapping(value="/auth")
+@RequestMapping(value = "/auth")
 public class AuthController {
 
+	private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
+	
 	private static final String LOGINSESSION = "LOGINSESSION";
 	@Autowired
 	private AuthService authService;

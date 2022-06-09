@@ -11,6 +11,8 @@ import com.team.Imitation.repository.dto.MemberDTO;
 @Service
 @Transactional
 public class AuthService {
+	
+	
 
 	@Autowired
 	private LoginMapper loginMapper;
