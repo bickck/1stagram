@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.team.Imitation.repository.BoardMapper">
+
+	<resultMap type="Board" id="BoardMap">
+		<result column="id" property="id" jdbcType="INTEGER" javaType="int"/>
+		<result column="email" property="email" jdbcType="VARCHAR" javaType="String"/>
+		<result column="content" property="content" jdbcType="VARCHAR" javaType="String"/>
+		<result column="recommand" property="recommand" jdbcType="INTEGER" javaType="int"/>
+		<result column="create_at" property="create_at" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp" />
+	</resultMap>
+
+	<insert id="register">
+		insert into Board values(#{id}, #{email}, #{content},#{recommand},#{create_at}, sysdate)
+	</insert>
+
+</mapper>
